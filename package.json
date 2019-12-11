@@ -1,0 +1,19 @@
+{
+  "name": "learning-citi",
+  "version": "1.0.0",
+  "description": "Learning on the job.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaliaHayes/Learning-Citi.git"
+  },
+  "author": "Kalia Hayes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaliaHayes/Learning-Citi/issues"
+  },
+  "homepage": "https://github.com/KaliaHayes/Learning-Citi#readme"
+}
