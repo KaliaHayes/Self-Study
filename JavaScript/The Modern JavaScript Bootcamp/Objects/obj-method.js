@@ -1,38 +1,29 @@
-// A method is an oject property whose value is a function [checkAvail]
-// When you put a function in an object, you can access that objects properties
-
 let rest = {
-    name: 'Wingstop',
-    capacity: 75,
-    guestCount: 0,
-    // create a func that takes in a number and determines if you can seat that amount of people
+    name: 'Hayes',
+    guestCapacity: 75,
+    guestCount: 0, //seats being used,
+    
+    // create a func that takes in a number and see if you can seat 5 folk
     checkAvail: function(partySize) {
-        let seatsLeft = this.capacity - this.guestCount
-        if (seatsLeft > partySize) {
-            return `Your party of ${partySize} will be seated shortly!`
-        }
-        else {
-            return `We do not currently have capacity for your party of ${partySize}! There are only ${seatsLeft} seats left.`
-        }
-
+        let seatsLeft = this.guestCapacity - this.guestCount
+        return partySize <= seatsLeft
+    },
+    seatParty: function(partySize) {
+        this.guestCount = this.guestCount + partySize
+    },
+    removeParty: function(partySize) {
+        this.guestCount = this.guestCount - partySize
     }
 }
 
-// use the checkAvail method you created to see if you can seat various parties of people
-//let myParty = console.log(rest.checkAvail(4))
-// let theirFleet = console.log(rest.checkAvail(6))
-
-// add new methods: seatParty - takes party size to be seated and add it to guestCount; removeParty - take party size leaving resturant and remove it from guestCount
-rest.seatParty = function (partySize) {
-    this.guestCount = this.guestCount + partySize
-}
-
-rest.removeParty = function(partySize) {
-    this.guestCount = this.guestCount - partySize
-}
-
+// seat a part of 72
 rest.seatParty(72)
+
+// check if a party of 4 can be sat (false, there are only 3 seats left)
 console.log(rest.checkAvail(4))
+
+// remove a party of 5 from the guestcount
 rest.removeParty(5)
+
+// check if a party of 4 can be sat NOW (true, there are now 67 seats left)
 console.log(rest.checkAvail(4))
-console.log(rest)
