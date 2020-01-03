@@ -4,28 +4,37 @@
 
 const notes = ['Finish this course', 'Make it to my meeting', 'Shop for Christmas presents', 'Eat', 'Live']
 
-// let notesTaken = `You have ${notes.length} notes in your list.`
-// let challenge = `The first item in your list is: ${notes[0]}, and the second to last item in your list is: ${notes[notes.length - 2]}`
+// Challenge
 
-// console.log(notesTaken)
-// console.log(challenge)
+// convert the array of strings into an array of objects with more properties
+// new objects now have text & completed (boolean)
 
-// // forEach method takes a single argument (actually a function)
+let todos = [{
+    text: 'Finish this course',
+    complete: false
+}, {
+    text: 'Make it to my meeting',
+    complete: false
+}, {
+    text: 'Eat',
+    complete: true
+}, {
+    text: 'Live',
+    complete: true
+}]
 
-// notes.forEach(function(item, index) {
-//     console.log(index)
-//     console.log(item)
-// })
+// create a function to remove a todo by text value - try and make it case-insensitive
+// if there's no match, do nothing
+// find the index of an 
 
-//Challenge
-// print the items in your notes like so: 1. item1, 2. item2... n
-
-notes.forEach(function(item, index) {
-    console.log(`${index + 1}. ${item}`)
-})
-
-for (i = 0; i <= notes.length - 1; i++) {
-    let index = i + 1
-    let currNote = notes[i]
-    console.log(`${index}. ${currNote}`)
+let deleteTodo = function(list, noteTitle) {
+    let deleteIndex = list.findIndex(function (item) {
+        return item.title === noteTitle
+    })
+    if (deleteIndex > -1) {
+       list.splice(deleteIndex, 1)
+    }
 }
+console.log(todos) // All items
+deleteTodo(todos, 'Eat') // Delete this item
+console.log(todos) // List with the deleted item gone
