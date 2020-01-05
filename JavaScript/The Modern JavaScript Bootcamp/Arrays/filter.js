@@ -47,4 +47,15 @@ let leftToDo = function(list) {
 
 }
 
-console.log(leftToDo(notes))
+let leftToDoToo = function(list) {
+    function notDone(note) {
+        return !note.completed // Return the items in your to do list that are NOT completed
+    }
+
+    return list.filter(notDone)
+
+}
+
+//console.log(leftToDo(notes))
+
+console.log(leftToDoToo(notes))
